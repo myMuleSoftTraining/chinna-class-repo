@@ -1,1 +1,1 @@
-# chinna-class-repo
+# nexus-demo-repo
