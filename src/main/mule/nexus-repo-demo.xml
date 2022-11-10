@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:api-gateway="http://www.mulesoft.org/schema/mule/api-gateway" xmlns:db="http://www.mulesoft.org/schema/mule/db"
+	xmlns:http="http://www.mulesoft.org/schema/mule/http"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd
+http://www.mulesoft.org/schema/mule/db http://www.mulesoft.org/schema/mule/db/current/mule-db.xsd
+http://www.mulesoft.org/schema/mule/api-gateway http://www.mulesoft.org/schema/mule/api-gateway/current/mule-api-gateway.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="f682f3da-feda-4851-bf1c-ccfbaa547479" >
+		<http:listener-connection host="0.0.0.0" port="${http.port}" />
+	</http:listener-config>
+	<configuration-properties doc:name="Configuration properties" doc:id="55bad625-3e76-41b6-b943-e94f84bd2f3e" file="config-${env}.yaml" />
+	<flow name="nexus-repo-demoFlow" doc:id="c99243df-dc4e-4115-9514-f5dcedb29934" >
+		<http:listener doc:name="Listener" doc:id="a343428d-2c8f-4325-9b5a-75d607bc4212" config-ref="HTTP_Listener_config" path="/nexusrepo"/>
+		<logger level="INFO" doc:name="Logger" doc:id="ee73bfde-fc8d-4c03-908d-fa7cbb310308" message="test"/>
+	</flow>
+</mule>
