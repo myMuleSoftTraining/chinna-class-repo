@@ -12,6 +12,6 @@ http://www.mulesoft.org/schema/mule/api-gateway http://www.mulesoft.org/schema/m
 	<configuration-properties doc:name="Configuration properties" doc:id="55bad625-3e76-41b6-b943-e94f84bd2f3e" file="config-${env}.yaml" />
 	<flow name="nexus-repo-demoFlow" doc:id="c99243df-dc4e-4115-9514-f5dcedb29934" >
 		<http:listener doc:name="Listener" doc:id="a343428d-2c8f-4325-9b5a-75d607bc4212" config-ref="HTTP_Listener_config" path="/nexusrepo"/>
-		<logger level="INFO" doc:name="Logger" doc:id="ee73bfde-fc8d-4c03-908d-fa7cbb310308" message="test"/>
+		<logger level="INFO" doc:name="Logger" doc:id="ee73bfde-fc8d-4c03-908d-fa7cbb310308" message="test nexus"/>
 	</flow>
 </mule>
